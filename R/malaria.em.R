@@ -784,7 +784,7 @@ Ginv<-function (x, eps = 1e-06)
     if (any(is.na(x))) 
         stop("NA(s) encountered in matrix, cannot invert.")
     if (length(x) > 1) {
-        savesvd <- svd(x, LINPACK = FALSE)
+        savesvd <- svd(x) # removed LINPACK = FALSE as now defunct
         U.svd <- savesvd$u
         V.svd <- savesvd$v
         d.svd <- savesvd$d
